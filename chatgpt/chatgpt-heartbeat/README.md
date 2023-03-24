@@ -1,4 +1,4 @@
-# <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://www.google.com/s2/favicons?sz=64&domain=openai.com"></picture> ChatGPT Heartbeat &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Tired%20of%20network%20interruptions%20in%20ChatGPT%3F%20This%20plug-in%20automatically%20resolves%20them%2C%20keeping%20conversations%20flowing%21&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-heartbeat&hashtags=greasemonkey,openai,chatgpt)
+# <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=23 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> ChatGPT Heartbeat &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Tired%20of%20network%20interruptions%20in%20ChatGPT%3F%20This%20plug-in%20automatically%20resolves%20them%2C%20keeping%20conversations%20flowing%21&url=https://github.com/adamlui/userscripts/tree/master/chatgpt/chatgpt-heartbeat&hashtags=greasemonkey,openai,chatgpt)
 
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/adamlui/userscripts/blob/master/LICENSE.md)
 
@@ -21,9 +21,14 @@
 [Discuss](https://github.com/adamlui/userscripts/discussions) / 
 [More ChatGPT userscripts](https://github.com/adamlui/userscripts/tree/master/chatgpt)
 
+## Author links
+
+[![GitHub](https://img.shields.io/github/followers/XiaoYingYo?label=Follow%20%40XiaoYingYo&style=social)](https://github.com/XiaoYingYo)
+<br><br>
+
 ## Related scripts
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://www.google.com/s2/favicons?sz=64&domain=openai.com"></picture> [ChatGPT Widescreen Mode](https://github.com/adamlui/userscripts/blob/master/chatgpt/chatgpt-widescreen-mode)
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=16 src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> [ChatGPT Widescreen Mode](https://github.com/adamlui/userscripts/blob/master/chatgpt/chatgpt-widescreen-mode)
 
 Adds Widescreen + Full-Window modes to ChatGPT for reduced scrolling. // 向 ChatGPT 添加宽屏 + 全窗口模式以减少滚动.<br>
 [Install](https://greasyfork.org/en/scripts/461473-chatgpt-widescreen-mode) / 
@@ -36,15 +41,14 @@ Automatically verify your humanity during Cloudflare Turnstile challenges. // �
 <br>[Install](https://github.com/adamlui/userscripts/raw/master/autopass-cloudflare-captcha/autopass-cloudflare-captcha.user.js) / 
 [Discuss](https://github.com/adamlui/userscripts/discussions)
 
-### <img src="https://brave.com/static-assets/images/brave-logo-sans-text.svg" width=16> [BraveGPT](https://github.com/adamlui/userscripts/blob/master/chatgpt/bravegpt)
+### <img src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/bravegpt/media/images/bravegpt-icon48.png" width=18> [BraveGPT](https://github.com/adamlui/userscripts/blob/master/chatgpt/bravegpt) <a href="https://www.producthunt.com/posts/bravegpt?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-bravegpt" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=385630&theme=light" alt="BraveGPT - Bring&#0032;the&#0032;magic&#0032;of&#0032;ChatGPT&#0032;to&#0032;Brave&#0032;Search&#0033; | Product Hunt" style="width: 112px; height: 24px; margin:0 0 -4px 5px;" width="112" height="24" /></a>
 
-Display ChatGPT answers in Brave Search sidebar. // 在 Brave Search 侧边栏中显示 ChatGPT 答案.<br>
-[Install](https://bravegpt.com/userscript/code/bravegpt.user.js) / 
+Display ChatGPT answers in Brave Search sidebar. // 在 Brave Search 侧边栏中显示 ChatGPT 答案.
+<br>[Install](https://greasyfork.org/en/scripts/462440-bravegpt) / 
+[Readme](https://github.com/adamlui/userscripts/blob/master/chatgpt/bravegpt/README.md) / 
 [Discuss](https://github.com/adamlui/userscripts/discussions)
 
 #
 
-[![GitHub](https://img.shields.io/github/followers/XiaoYingYo?label=Follow%20%40XiaoYingYo&style=social)](https://github.com/XiaoYingYo)
-
-
+<a href="https://github.com/adamlui/userscripts">More userscripts</a> / 
 <a href="#-chatgpt-heartbeat-">Back to top ↑</a>

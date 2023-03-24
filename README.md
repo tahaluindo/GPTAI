@@ -1,11 +1,11 @@
-# Greasemonkey userscripts &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Just%20discovered%20these%20epic%20userscripts!&url=https://github.com/adamlui/userscripts&hashtags=greasemonkey,userscripts,javascript)
+# 🐵 Greasemonkey userscripts &nbsp;[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Just%20discovered%20these%20epic%20userscripts!&url=https://github.com/adamlui/userscripts&hashtags=greasemonkey,userscripts,javascript)
 MTurk, ChatGPT and other Greasemonkey userscripts. A userscript manager such as [Tampermonkey](https://www.tampermonkey.net/) is required to run these scripts.
 
-MTurk、ChatGPT 和其他 Greasemonkey 用户脚本. 运行这些脚本需要一个用户脚本管理器,例如 [Tampermonkey](https://www.tampermonkey.net/).
+MTurk, ChatGPT 和其他 Greasemonkey 用户脚本. 运行这些脚本需要一个用户脚本管理器,例如 [Tampermonkey](https://www.tampermonkey.net/).
 
 [![stars](https://img.shields.io/github/stars/adamlui/userscripts?label=Stars)](https://github.com/adamlui/userscripts/stargazers)
 [![license](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE.md)
-![support](https://img.shields.io/badge/Support-Chrome/Firefox/Edge/Opera/Safari-989898.svg)
+![support](https://img.shields.io/badge/Support-Chrome/Safari/Firefox/Edge/Opera/Brave/Vivaldi/Librewolf/QQ-989898.svg)
 ![code quality](https://img.shields.io/codefactor/grade/github/adamlui/userscripts?label=Code+Quality)
 
 ---
@@ -15,7 +15,7 @@ MTurk、ChatGPT 和其他 Greasemonkey 用户脚本. 运行这些脚本需要一
 Automatically verify your humanity during Cloudflare Turnstile challenges // 在 Cloudflare Turnstile 挑战期间自动验证您的人性
 <br>[Install](https://github.com/adamlui/userscripts/raw/master/autopass-cloudflare-captcha/autopass-cloudflare-captcha.user.js) / [Discuss](https://github.com/adamlui/userscripts/discussions)
 
-### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=15 alt="ChatGPT logo" src="https://www.google.com/s2/favicons?sz=64&domain=openai.com"></picture> [ChatGPT scripts](chatgpt)
+### <picture><source media="(prefers-color-scheme: dark)" srcset="https://i.imgur.com/RduASbD.png"><img width=15 alt="ChatGPT logo" src="https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png"></picture> [ChatGPT scripts](chatgpt)
 
 Userscripts that utilize the astounding AI of ChatGPT // 利用 ChatGPT 惊人的 AI 的用户脚本
 <br>[View scripts](chatgpt) / [Discuss](https://github.com/adamlui/userscripts/discussions)
@@ -42,8 +42,5 @@ Reverts YouTube to its classic design (before all the rounded corners & hidden d
 
 #
 
-[![Follow @adamlui on GitHub](https://img.shields.io/github/followers/adamlui?label=Follow%20%40adamlui&style=social "GitHub")](https://github.com/adamlui)
-<a href="https://elonsucks.org/@adam" target="_blank"><img align="bottom" src="https://img.shields.io/mastodon/follow/109387703022229926?domain=https%3A%2F%2Felonsucks.org&style=social" alt="Follow @adam on Mastodon" title="Mastodon">
-[![Follow @XiaoYingYo on GitHub](https://img.shields.io/github/followers/XiaoYingYo?label=Follow%20%40XiaoYingYo&style=social "GitHub")](https://github.com/XiaoYingYo)
-
-<a href="#greasemonkey-userscripts-">Back to top ↑</a>
+<a href="https://github.com/adamlui/userscripts/discussions">Discuss</a> / 
+<a href="#-greasemonkey-userscripts-">Back to top ↑</a>

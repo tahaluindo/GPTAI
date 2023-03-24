@@ -3,8 +3,8 @@
 // @namespace    Violentmonkey Scripts
 // @match        https://challenges.cloudflare.com/*
 // @match        https://chat.openai.com/*
-// @grant        none
-// @version      2023.03.06.6
+// @match        https://freegpt.one/*
+// @version      2023.3.24 10:47:30
 // @grant        none
 // @run-at       document-start
 // @author       github.com @XiaoYingYo
@@ -47,7 +47,7 @@ async function main() {
         VerifyYouAreHuman_02();
         return;
     }
-    if($('div[class="logo"]').length > 0){
+    if ($('div[class="logo"]').length > 0) {
         VerifyYouAreHuman_03();
         return;
     }

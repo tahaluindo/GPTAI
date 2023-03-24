@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name             DuckDuckGPT 🤖
-// @version          2023.03.06
+// @version          2023.03.22.1
 // @author           Adam Lui
 // @namespace        https://github.com/adamlui
 // @description      Adds ChatGPT answers to DuckDuckGo sidebar
@@ -12,15 +12,17 @@
 // @compatible       chrome
 // @compatible       firefox
 // @compatible       edge
+// @compatible       opera
 // @compatible       brave
 // @compatible       vivaldi
+// @compatible       librewolf
+// @compatible       qq
 // @match            https://duckduckgo.com/*
 // @include          https://auth0.openai.com
 // @connect          chat.openai.com
 // @grant            GM.deleteValue
 // @grant            GM.getValue
 // @grant            GM.setValue
-// @grant            GM.info
 // @grant            GM.xmlHttpRequest
 // @grant            GM_cookie
 // @updateURL        https://www.duckduckgpt.com/userscript/code/duckduckgpt.meta.js
@@ -29,7 +31,6 @@
 
 var GM_setValue = (() => GM.setValue)()
 var GM_deleteValue = (() => GM.deleteValue)()
-var GM_info = (() => GM.info)()
 var GM_xmlhttpRequest = (() => GM.xmlHttpRequest)()
 var GM_getValue = (() => GM.getValue)()
 

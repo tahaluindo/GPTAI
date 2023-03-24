@@ -2,26 +2,15 @@
 // @name        ChatGPT Heartbeat
 // @namespace   Violentmonkey Scripts
 // @match       *://chat.openai.com/*
+// @match       *://freegpt.one/*
+// @version     2023.3.24 10:47:30
 // @grant       none
-// @version     1.0
-// @grant       GM_info
-// @grant       GM_getValue
-// @grant       GM_setValue
-// @grant       GM_addStyle
-// @grant       GM_deleteValue
-// @grant       GM_xmlhttpRequest
-// @grant       GM_setClipboard
-// @grant       GM_registerMenuCommand
-// @grant       GM_unregisterMenuCommand
-// @grant       GM_getResourceText
-// @grant       GM_getResourceURL
-// @grant       unsafeWindow
-// @run-at      document-start
+// @run-at      document-body
 // @author      github.com @XiaoYingYo
 // @require     https://raw.githubusercontent.com/XiaoYingYo/ScriptModule/main/module_jquery.js
 // @require     https://raw.githubusercontent.com/XiaoYingYo/ScriptModule/main/module.js
-// @icon        https://www.google.com/s2/favicons?sz=48&domain=openai.com
-// @icon64      https://www.google.com/s2/favicons?sz=64&domain=openai.com
+// @icon        https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon48.png
+// @icon64      https://raw.githubusercontent.com/adamlui/userscripts/master/chatgpt/media/icons/openai-favicon64.png
 // @description 2023-3-6 13:25:06
 // ==/UserScript==
 
@@ -30,17 +19,32 @@ var $ = window["$$$"];
 
 let cookiescache = {};
 
+unsafeWindow.ResetIframeFun = null;
+
 MaskLayer = {
     show: function () {
         if (MaskLayerIsExist()) {
             return;
         }
-        let html = "<div id='_MaskLayer_' style='position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999999999;'><div style='position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 20px; font-weight: bold;'>ChatGPT Checking whether you are a man-machine, please wait a moment, we are providing you with a better user experience in automation<br>If you stay here for a long time, please refresh the page directly!<br><br>ChatGPT 正在检测您是不是人机,请稍等,我们正在自动化为您提供更好的用户体验<br>如果您久留,请直接刷新页面!</div></div>";
+        let html = "<div id='_MaskLayer_' style='position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 999999999;'><div style='position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-size: 20px; font-weight: bold;'>ChatGPT Checking whether you are a man-machine, please wait a moment, we are providing you with a better user experience in automation<br>If you stay here for a long time, please refresh the page directly!<br><br>ChatGPT 正在检测您是不是人机,请稍等,我们正在自动化为您提供更好的用户体验<br>如果您久留,请直接刷新页面!" + getRefreshIcon() + "</div></div>";
         $("body").eq(0).append(html);
     },
     hide: function () {
         $("div#_MaskLayer_").eq(0).remove();
     },
+}
+
+function getRefreshIcon() {
+    return `<button onclick="ResetIframeFun();" style="display: flex; justify-content: center; align-items: center; border: 1px solid black; padding: 5px; border-radius: 5px;"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-refresh" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+    <path d="M4 12a8 8 0 1 0 4.83 7.15" />
+    <path d="M4 4v4h4" />
+    <path d="M4 16v4h4" />
+    <path d="M16 11.5a4.5 4.5 0 0 0 -4.5 4.5" />
+    <path d="M16 4.5a7.5 7.5 0 0 0 -7.5 7.5" />
+    <path d="M16 4.5h4v4" />
+    <path d="M16 19.5h4v4" />
+    </svg><span style="margin-left: 5px;">Retry</span></button>`;
 }
 
 let GlobalVariable = {};
@@ -116,7 +120,7 @@ async function OpenNewChatGPTIniframe(force) {
     that.createiframe = function () {
         let that = this;
         let iframe = document.createElement("iframe");
-        iframe.src = "https://chat.openai.com/";
+        iframe.src = "/";
         iframe.style.width = "100%";
         iframe.style.height = "100%";
         iframe.style.display = "block";
@@ -126,6 +130,7 @@ async function OpenNewChatGPTIniframe(force) {
             await new Promise(async (resolve) => { setTimeout(resolve, 1000); });
             that.createiframe();
         }
+        unsafeWindow.ResetIframeFun = that.reset;
         let interval = setInterval(() => {
             try {
                 let href = $(iframe)[0].contentWindow.location.href;
@@ -154,8 +159,16 @@ async function FindPrimaryBtn(NetworkErrorElement) {
             resolve(null);
             return null;
         }
-        let w_full = "div[class^='w-full']";
-        let LastMessageParent = $(NetworkErrorElement).parents(w_full).eq(0);
+        let dialogeleclass = ["w-full", "group w-full"];
+        let LastMessageParent = null;
+        let length = dialogeleclass.length;
+        for (let i = 0; i < length; i++) {
+            LastMessageParent = $(NetworkErrorElement).parents("div[class^='" + dialogeleclass[i] + "']").eq(0);
+            console.log("div[class^='" + dialogeleclass[i] + "']");
+            if (LastMessageParent.length > 0) {
+                break;
+            }
+        }
         let LastMessageElement = $(LastMessageParent).prev(w_full).eq(0);
         let buttons = $(LastMessageElement).find("button");
         for (let i = 0; i < buttons.length; i++) {
@@ -220,34 +233,46 @@ function isChatGPT() {
 }
 
 async function PassTest() {
-    let CheckURL = "/chat";
+    let CheckURLObj = {
+        "freegpt.one": "/",
+        "chat.openai.com": "/chat",
+    }
+    let CheckURL = CheckURLObj[location.host];
     return new Promise(async (resolve) => {
         let res = null;
         try {
-            res = await fetch(CheckURL, {
-                method: 'GET',
-                mode: 'no-cors',
-                cache: 'no-cache',
-            });
+            res = await Promise.race([
+                fetch(CheckURL, {
+                    method: 'GET',
+                    cache: 'no-cache',
+                }),
+                new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve(null);
+                    }, 5000);
+                })
+            ]);
+            if (res == null) {
+                resolve(false);
+                return false;
+            }
+            let status = res.status;
+            if (status != 200) {
+                resolve(false);
+                return false;
+            }
+            let html = await res.text();
+            if (html.indexOf(">Redirecting...</p>") != -1) {
+                resolve(false);
+                return false;
+            }
+            resolve(true);
+            return true;
         } catch (e) {
             console.log(e);
-        }
-        if (res == null) {
             resolve(false);
             return false;
         }
-        let status = res.status;
-        if (status != 200) {
-            resolve(false);
-            return false;
-        }
-        let html = await res.text();
-        if (html.indexOf(">Redirecting...</p>") != -1) {
-            resolve(false);
-            return false;
-        }
-        resolve(true);
-        return true;
     });
 }
 
