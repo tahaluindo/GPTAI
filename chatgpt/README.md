@@ -1,9 +1,8 @@
-# chatGPT-mirror-site-collection
+# chatGPT-site-collection
 这个库收集了chatgpt镜像站
 # Free ChatGPT Site List
 
 这儿收集了一些免费好用的ChatGPT镜像站点
-> 🤭收藏此站点,不迷失；如果**分享站点**或有**站点失效和标注错误**，告诉我失效网站'https://github.com/qwe361/chatGPT-mirror-site-collection/discussions/3'
 > 🧡🧡
 > 
 
@@ -15,12 +14,8 @@
 
  [🔑⭐] https://poe.com/
 
-
- 
-
  [⭐⭐] https://gpt.h7ml.cn/
 
- 
  [⭐⭐] https://chat.wxredcover.cn/
 
 [⭐⭐] https://theb.ai/
