@@ -38,6 +38,8 @@
 
 [⭐⭐] https://gpt.h7ml.cn/
 
+https://chrome.google.com/webstore/detail/chathub-all-in-one-chatbo/iaakpnchhognanibcahlpcplchdfmgma/related
+
 https://chater.lanyun1103.top
 
 https://chat.yougan.cc/
